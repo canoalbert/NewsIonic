@@ -1,0 +1,7 @@
+{
+  "name": "NewsIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
