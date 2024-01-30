@@ -40,11 +40,8 @@ export class NewsService {
   }
 
   findByTitleOrAuthor(query: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/search?query=${query}`);
+    return this.http.get<any[]>(`${this.apiUrl}/search/${query}`);
   }
 
-  searchNewsByAuthor(author: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/search?author=${author}`);
-  }
 
 }

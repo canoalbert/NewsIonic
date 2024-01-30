@@ -12,10 +12,10 @@
   </ion-header>
   <ion-item>
     <ion-label position="floating">Search query</ion-label>
-    <ion-input label type="text" [(ngModel)]="searchQuery"></ion-input>
+    <ion-input label type="text" (keyup.enter)="search()" [(ngModel)]="searchQuery"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" (click)="searchByAuthor()">Search</ion-button>
+  <ion-button expand="block" (click)="search()">Search</ion-button>
 
   <ion-list *ngIf="searchResults.length > 0">
     <ion-item *ngFor="let result of searchResults">

@@ -25,12 +25,4 @@ export class SearchPage implements OnInit {
     }
   }
 
-  searchByAuthor() {
-    if (this.searchQuery) {
-      this.newsService.searchNewsByAuthor(this.searchQuery).subscribe(results => {
-        this.searchResults = results;
-      });
-    }
-  }
-
 }
