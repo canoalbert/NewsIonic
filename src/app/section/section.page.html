@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ sectionName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<app-navbar></app-navbar>
+
+<ion-content>
+    <ion-list>
+      <ion-item *ngFor="let newsItem of sectionNews" class="news-item">
+        <ion-thumbnail slot="start">
+          <img [src]="newsItem.images[0]">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ newsItem.title }}</h2>
+          <p>{{ newsItem.subtitle }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreNews($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando 5 noticias..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+

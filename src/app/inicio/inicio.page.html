@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<app-navbar></app-navbar>
+<ion-content>
+  <div class="news-container">
+    <ion-card *ngFor="let news of newsList" class="news-item" >
+      <div (click)="openNewsDetails(news._id)">
+        <ion-card-header>
+          <ion-card-title>{{ news.title }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ng-container *ngFor="let image of news.images">
+            <img [src]="image" alt="" class="news-image">
+          </ng-container>
+          <p>{{ news.author }}</p>
+        </ion-card-content>
+      </div>
+
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMoreNews($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando 5 noticias..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

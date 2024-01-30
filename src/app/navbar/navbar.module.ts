@@ -16,6 +16,9 @@ import { NavbarPage } from './navbar.page';
 
 
   ],
+  exports: [
+    NavbarPage
+  ],
   declarations: [NavbarPage]
 })
 export class NavbarPageModule {}

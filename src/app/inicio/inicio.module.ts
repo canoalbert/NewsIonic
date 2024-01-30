@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SearchPageRoutingModule } from './search-routing.module';
+import { InicioPageRoutingModule } from './inicio-routing.module';
 
-import { SearchPage } from './search.page';
+import { InicioPage } from './inicio.page';
 import {NavbarPageModule} from "../navbar/navbar.module";
 
 @NgModule({
@@ -14,9 +14,9 @@ import {NavbarPageModule} from "../navbar/navbar.module";
         CommonModule,
         FormsModule,
         IonicModule,
-        SearchPageRoutingModule,
+        InicioPageRoutingModule,
         NavbarPageModule
     ],
-  declarations: [SearchPage]
+  declarations: [InicioPage]
 })
-export class SearchPageModule {}
+export class InicioPageModule {}

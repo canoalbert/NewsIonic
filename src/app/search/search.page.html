@@ -10,6 +10,7 @@
       <ion-title size="large">Search</ion-title>
     </ion-toolbar>
   </ion-header>
+  <app-navbar></app-navbar>
   <ion-item>
     <ion-label position="floating">Search query</ion-label>
     <ion-input label type="text" (keyup.enter)="search()" [(ngModel)]="searchQuery"></ion-input>

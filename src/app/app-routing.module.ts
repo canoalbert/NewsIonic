@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'navbar',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -16,6 +16,18 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'section/:sectionName',
+    loadChildren: () => import('./section/section.module').then( m => m.SectionPageModule)
+  },
+  {
+    path: 'news-details/:_id',
+    loadChildren: () => import('./news-details/news-details.module').then( m => m.NewsDetailsPageModule)
+  }
 ];
 
 @NgModule({

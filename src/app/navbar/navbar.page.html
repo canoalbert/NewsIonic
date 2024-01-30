@@ -1,25 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title slot="start">
-      Navbar
-    </ion-title>
+    <ion-buttons slot="start" class="ion-justify-content-around">
+      <ion-button routerLink="">Inicio</ion-button>
+      <ion-buttons slot="start" *ngFor="let section of sections">
+        <ion-button  [routerLink]="['/section', section.name]" class="ion-text-center cursor">{{ section.name }}</ion-button>
+      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let news of newsList">
-      <ion-label>
-        <h2>{{ news.title }}</h2>
-        <ng-container *ngFor="let image of news.images">
-          <img [src]="image" alt="" class="news-image">
-        </ng-container>
-        <p>{{ news.author }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-infinite-scroll (ionInfinite)="loadMoreNews($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más noticias..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-</ion-content>
