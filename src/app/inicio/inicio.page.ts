@@ -9,11 +9,10 @@ import { Router } from "@angular/router";
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  @ViewChild(IonContent) content: IonContent | undefined;
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll | undefined;
+  @ViewChild(IonContent) content!: IonContent;
+  @ViewChild(IonInfiniteScroll) infiniteScroll!: IonInfiniteScroll;
   newsList: any[] = [];
   allNewsLoaded: boolean = false;
-  totalNewsCount: number = 0;
   currentIndex = 0;
 
   constructor(private newsService: NewsService, private router: Router) {
@@ -21,7 +20,6 @@ export class InicioPage implements OnInit {
 
   ngOnInit() {
     this.loadInitialNews();
-    console.log('a')
   }
 
   loadInitialNews() {

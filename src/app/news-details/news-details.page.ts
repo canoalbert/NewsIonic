@@ -37,13 +37,13 @@ export class NewsDetailsPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.swiper = new Swiper('.swiper-container', {
+    this.swiper = new Swiper('swiper-container', {
       slidesPerView: 1,
       spaceBetween: 20,
       loop: false,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: 'swiper-button-next',
+        prevEl: 'swiper-button-prev',
       },
       pagination: {
         el: '.swiper-pagination',

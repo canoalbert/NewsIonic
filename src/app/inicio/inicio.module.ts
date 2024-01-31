@@ -8,6 +8,7 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
 import {NavbarPageModule} from "../navbar/navbar.module";
+import {TabsPageModule} from "../tabs/tabs.module";
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {NavbarPageModule} from "../navbar/navbar.module";
         FormsModule,
         IonicModule,
         InicioPageRoutingModule,
-        NavbarPageModule
+        NavbarPageModule,
+        TabsPageModule
     ],
   declarations: [InicioPage]
 })

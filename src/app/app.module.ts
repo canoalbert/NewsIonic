@@ -11,10 +11,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import {NavbarPageModule} from "./navbar/navbar.module";
+import {HeaderPageModule} from "./header/header.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, NavbarPageModule, FlexLayoutModule],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, NavbarPageModule, FlexLayoutModule, HeaderPageModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

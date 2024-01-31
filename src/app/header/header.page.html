@@ -1,0 +1,20 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons class="ion-justify-content-center">
+      <ion-avatar>
+        <ion-img src="assets/shapes.svg" routerLink=""></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-toggle menu="menuId">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-menu></app-menu>

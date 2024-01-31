@@ -3,7 +3,10 @@
     <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
-<app-navbar></app-navbar>
+<ion-tab-bar>
+  <app-tabs></app-tabs>
+</ion-tab-bar>
+
 <ion-content>
   <div class="news-container">
     <ion-card *ngFor="let news of newsList" class="news-item" >
@@ -14,7 +17,7 @@
 
         <ion-card-content>
           <ng-container *ngFor="let image of news.images">
-            <img [src]="image" alt="" class="news-image">
+            <ion-img  [src]="image" alt="" class="news-image"></ion-img>
           </ng-container>
           <p>{{ news.author }}</p>
         </ion-card-content>
@@ -27,3 +30,8 @@
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando 5 noticias..."></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+  <ion-fab-button color="danger" routerLink="/search">
+    <ion-icon name="search-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

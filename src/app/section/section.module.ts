@@ -8,15 +8,17 @@ import { SectionPageRoutingModule } from './section-routing.module';
 
 import { SectionPage } from './section.page';
 import {NavbarPageModule} from "../navbar/navbar.module";
+import {TabsPageModule} from "../tabs/tabs.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SectionPageRoutingModule,
-    NavbarPageModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        SectionPageRoutingModule,
+        NavbarPageModule,
+        TabsPageModule,
+    ],
   declarations: [SectionPage]
 })
 export class SectionPageModule {}
