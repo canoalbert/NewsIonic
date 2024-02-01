@@ -13,9 +13,7 @@ export class SearchPage implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsService.getAllNews()
-    console.log(this.newsService.getAllNews())
-    console.log("Pagina de busqueda")
+
   }
   search() {
     if (this.searchQuery.trim() !== '') {

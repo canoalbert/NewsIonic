@@ -4,13 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-tab-bar>
+
   <app-tabs></app-tabs>
-</ion-tab-bar>
+
 
 <ion-content>
     <ion-list>
-      <ion-item *ngFor="let newsItem of sectionNews" class="news-item">
+      <ion-item *ngFor="let newsItem of sectionNews" class="news-item" (click)="openNewsDetails(newsItem._id)">
+
         <ion-thumbnail slot="start">
           <img [src]="newsItem.images[0]">
         </ion-thumbnail>
@@ -25,3 +26,8 @@
     </ion-infinite-scroll>
 </ion-content>
 
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+  <ion-fab-button color="danger" routerLink="/search">
+    <ion-icon name="search-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

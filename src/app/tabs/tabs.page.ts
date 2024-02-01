@@ -12,7 +12,7 @@ export class TabsPage implements OnInit {
   constructor(private newsService: NewsService, private router: Router) {}
 
   ngOnInit() {
-    console.log('Navbar Cargado')
+    console.log('Segment Cargado')
     this.newsService.getAllSections().subscribe(sections => {
       this.sections = sections;
     })

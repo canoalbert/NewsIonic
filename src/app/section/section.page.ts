@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {NewsService} from "../services/news.service";
 import {News} from "../interface/news.interface";
 import {IonInfiniteScroll} from "@ionic/angular";
@@ -10,12 +10,12 @@ import {IonInfiniteScroll} from "@ionic/angular";
   styleUrls: ['./section.page.scss'],
 })
 export class SectionPage implements OnInit {
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll | undefined;
+  @ViewChild(IonInfiniteScroll) infiniteScroll!: IonInfiniteScroll;
   sectionName!: string;
   sectionNews!: News[];
   allNewsLoaded: boolean = false;
   currentIndex = 0;
-  constructor(private route: ActivatedRoute, private newsService: NewsService) { }
+  constructor(private route: ActivatedRoute,private router: Router, private newsService: NewsService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -30,6 +30,9 @@ export class SectionPage implements OnInit {
       this.sectionNews = initialNews;
       this.currentIndex = 5;
     });
+  }
+  openNewsDetails(_id: any) {
+    this.router.navigate(['/news-details', _id]);
   }
 
   loadMoreNews($event: any) {

@@ -1,10 +1,16 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="end" class="ion-justify-content-around">
-      <ion-button routerLink="">Inicio</ion-button>
-      <ion-buttons slot="start" *ngFor="let section of sections">
-        <ion-button  [routerLink]="['/section', section.name]" class="ion-text-center cursor">{{ section.name }}</ion-button>
-      </ion-buttons>
+    <ion-buttons class="ion-justify-content-center">
+      <ion-avatar>
+        <ion-img src="assets/shapes.svg" routerLink=""></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-toggle menu="menuId">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </ion-menu-toggle>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<app-menu></app-menu>

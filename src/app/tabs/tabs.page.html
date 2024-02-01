@@ -1,11 +1,10 @@
 
-<ion-tabs>
-  <ion-tab-bar slot="start" class="ion-justify-content-around">
 
-    <ion-tab-button *ngFor="let section of sections" [routerLink]="['/section', section.name]"
-                    [routerLinkActive]="'active-tab'">
-      <ion-label>{{ section.name }}</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<ion-segment [scrollable]="true" class="ion-margin-top" >
+  <ion-segment-button class="ion-justify-content-center "  *ngFor="let section of sections" [routerLink]="['/section', section.name]" [routerLinkActive]="'active-segment'">
+ {{ section.name }}
+  </ion-segment-button>
+</ion-segment>
+
+
 

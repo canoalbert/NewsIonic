@@ -1,29 +1,4 @@
-* {
-  font-size: 9px;
-}
 
-.custom-tab-bar {
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: auto;
-}
-
-.custom-tab-bar ion-tab-button {
-
-  padding: 1rem;
-}
-
-.custom-tab-bar ion-tab-button ion-label {
-  padding: 1rem;
-  text-align: center;
-}
-
-.active-tab {
-  color: #FFFFFF;
-  background-color: #7c7c7c;
+.segment{
+  margin-top: 15px;
 }
