@@ -10,10 +10,9 @@ import {formatDate} from "@angular/common";
   templateUrl: './news-details.page.html',
   styleUrls: ['./news-details.page.scss'],
 })
-export class NewsDetailsPage implements OnInit, AfterViewInit {
-  news: News | undefined;
-  swiper: Swiper | undefined;
-  newsList: News[] = [];
+export class NewsDetailsPage implements OnInit {
+  news!: News;
+  swiper!: Swiper;
   accordionExpanded: boolean = false;
   constructor(
     private route: ActivatedRoute,
@@ -33,39 +32,7 @@ export class NewsDetailsPage implements OnInit, AfterViewInit {
         }
       );
     }
-    this.getAllNews();
-  }
 
-  ngAfterViewInit() {
-    this.swiper = new Swiper('swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: false,
-      navigation: {
-        nextEl: 'swiper-button-next',
-        prevEl: 'swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  }
-
-  getAllNews() {
-    this.newsService.getAllNews().subscribe(
-      data => {
-        this.newsList = data.map(news => ({
-          ...news,
-          dateFormatted: this.newsService.formatDate(new Date(news.date))
-
-        }));
-      },
-      error => {
-        console.error('Error al obtener la lista de noticias:', error);
-        console.log('Código de estado:', error.status);
-      }
-    );
   }
 
   toggleAccordion() {

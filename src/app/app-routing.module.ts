@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path: 'fab',
     loadChildren: () => import('./fab/fab.module').then( m => m.FabPageModule)
+  },
+  {
+    path: 'fab2',
+    loadChildren: () => import('./fab2/fab2.module').then( m => m.Fab2PageModule)
   }
 ];
 
